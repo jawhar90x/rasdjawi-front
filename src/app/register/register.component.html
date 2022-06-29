@@ -1,0 +1,101 @@
+<body class="body">
+
+  <div class="card">
+
+    
+      <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <p class="text-center">Get started with your free account</p>
+        <p>
+          <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+          <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+        </p>
+        <p class="divider-text">
+          <span class="bg-light">OR</span>
+        </p>
+        <form [formGroup]="myform" (ngSubmit)="register()">
+          <div class="form-group input-group">
+
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <input name="firstname" class="form-control" placeholder=" name" type="text" formControlName="firstname">
+          </div>
+          <div *ngIf="firstname?.invalid && firstname?.touched">
+            <small *ngIf="firstname?.errors?.['required']" class="text-danger">name is required<br></small>
+          </div>
+
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            <input name="lastname" class="form-control" placeholder="last name" type="text" formControlName="lastname">
+          </div>
+          
+     <!-- form-group// -->
+    <div *ngIf="lastname?.invalid && lastname?.touched">
+      <small *ngIf="lastname?.errors?.['required']" class="text-danger">lastname is required<br></small>
+    </div>
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input name="" class="form-control" placeholder="Email address" type="email" formControlName="email">
+    </div>
+    <div *ngIf="email?.invalid && email?.touched">
+      <small *ngIf="email?.errors?.['required']" class="text-danger">Email is required<br></small>
+      <small *ngIf="email?.errors?.['email']" class="text-danger"> invalid Email<br></small>
+    </div> <!-- form-group// -->
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+      </div>
+
+      <input name="" class="form-control" placeholder="Phone number" type="text" formControlName="phone">
+    </div> <!-- form-group// -->
+    <div *ngIf="phone?.invalid && phone?.touched">
+      <small *ngIf="phone?.errors?.['required']" class="text-danger">phone is required<br></small>
+      <small *ngIf="phone?.errors?.['phone']" class="text-danger"> invalid phone<br></small>
+    </div>
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Create password" type="password" formControlName="password">
+    </div> <!-- form-group// -->
+    <div *ngIf="password?.invalid && email?.touched">
+      <small *ngIf="password?.errors?.['required']" class="text-danger">password is required<br></small>
+      <small *ngIf="password?.errors?.['minlength']" class="text-danger"> Short password<br></small>
+    </div>
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Repeat password" type="password" formControlName="password">
+    </div> <!-- form-group// -->
+    <div *ngIf="repeatpassword?.invalid && repeatpassword?.touched">
+      <small *ngIf="repeatpassword?.errors?.['required']" class="text-danger">password is required<br></small>
+      <small *ngIf="repeatpassword?.errors?.['repeatpassword']" class="text-danger"> invalid password<br></small>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block"    > Create Account </button>
+    </div> <!-- form-group// -->
+    <p class="text-center">Have an account? <a routerLink="/login" >Log In</a> </p>
+    </form>
+    </article>
+  </div> <!-- card.// -->
+
+ 
+  <!--container end.//-->
+
+
+  <article class="mb-3">
+
+
+    <br><br>
+  </article>
+  <app-footer></app-footer>
+
+</body>

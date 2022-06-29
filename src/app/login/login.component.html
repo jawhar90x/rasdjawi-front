@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="body">
+
+	<div class="card">
+
+
+		<div >
+			<article class="card-body mx-auto" style="max-width: 400px;">
+				<h4 class="card-title mt-3 text-center">Login</h4>
+				<p class="text-center">started with your free account</p>
+				<p>
+					<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+					<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+				</p>
+
+				<form [formGroup]="myform" (ngSubmit)="login()">
+					<div class="form-group input-group">
+
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+						</div>
+						<input name="email" class="form-control" placeholder="Email address" type="email" formControlName="email">
+						<div *ngIf="email?.invalid && email?.touched">
+							<small *ngIf="email?.errors?.['required']" class="text-danger">Email is required<br></small>
+							<small *ngIf="email?.errors?.['email']" class="text-danger"> invalid Email<br></small>
+						</div>
+					</div> <!-- form-group// -->
+				
+
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+						</div>
+						<input class="form-control" placeholder="Create password" type="password" formControlName="password" >
+						<div *ngIf="password?.invalid && password?.touched">
+							<small *ngIf="password?.errors?.['required']" class="text-danger">Password is required<br></small>
+							<small *ngIf="password?.errors?.['minlength']" class="text-danger"> Short password<br></small>
+						</div>
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+					
+
+					</div> <!-- form-group// -->
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-block"  [disabled]="myform.invalid	"> Login </button>
+					</div> <!-- form-group// -->
+					<p class="text-center">Register for new account <a [routerLink]="['/register']">Register</a> </p>
+				</form>
+			</article>
+		</div> <!-- card.// -->
+
+	</div>
+	<!--container end.//-->
+
+
+
+
+	<app-footer></app-footer>
+
+</div>
