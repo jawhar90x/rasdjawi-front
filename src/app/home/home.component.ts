@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
 
   //http://api.openweathermap.org/data/2.5/weather?q=${addrr}&APPID=c29ba7cc7629039b6dfc469e8b00b288
-  
+  /*
   weatherCurrent() {
      let data = this.myform.value;
   let adress = new Adress(data.city, data.temp, data.Cloudy, data.Humidty, data.wind)
@@ -38,5 +38,5 @@ export class HomeComponent implements OnInit {
 
 
   }
-
+*/
 }

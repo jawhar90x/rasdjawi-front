@@ -20,6 +20,7 @@ import { LogAdminComponent } from './log-admin/log-admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommandesComponent } from './dashboard/commandes/commandes.component';
 import { MembresComponent } from './dashboard/membres/membres.component';
+import { SidebarComponent } from './app/dashboard/sidebar/sidebar.component';
  
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MembresComponent } from './dashboard/membres/membres.component';
     LogAdminComponent,
     DashboardComponent,
     CommandesComponent,
-    MembresComponent
+    MembresComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

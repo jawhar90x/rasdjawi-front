@@ -43,7 +43,7 @@ export class UserService {
   }
 
   loginUser(user: User) {
-    return this.http.post<any>(this.loginUserurl, user);
+    return this.http.post<any>(this.loginUserurl, user, { observe: 'response' });
   }
 
 

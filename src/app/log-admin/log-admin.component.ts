@@ -48,12 +48,14 @@ export class LogAdminComponent implements OnInit {
     let user = new User("", "", "", data.email, data.password)
     this.userService.loginUser(user).subscribe({
       next: (result) => {
+        /*
         console.log(result)
         let token = result.token;
         localStorage.setItem("myToken", token)
         this.toastr.success(result.message);
 
         this.router.navigate(['/dashboard']);
+        */
       },
       error: (err) => {
         console.log(err);
@@ -61,10 +63,10 @@ export class LogAdminComponent implements OnInit {
 
     })
 
-    }
-    
+  }
+
 
 
 
 }
-  
+

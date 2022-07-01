@@ -4,6 +4,7 @@ import { User } from '../user';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
 
   myform: FormGroup;
+
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private toastr: ToastrService) {
     let formLogin = {
@@ -42,16 +44,23 @@ export class LoginComponent implements OnInit {
 
 
   login() {
+
+
     let data = this.myform.value;
     let user = new User("", "", "", data.email, data.password)
     this.userService.loginUser(user).subscribe({
       next: (result) => {
-        console.log(result)
-        let token = result.token;
-        localStorage.setItem("myToken", token)
-        this.toastr.success(result.message);
+        console.log(result.headers.get('authorization'))
 
-        this.router.navigate(['/weatherservice']);
+        /*
+console.log(result)
+let token = result.token;
+console.log(token)
+localStorage.setItem("myToken", token)
+this.toastr.success(result.message);
+
+this.router.navigate(['/weatherservice']);
+*/
       },
       error: (err) => {
         console.log(err);
@@ -59,8 +68,8 @@ export class LoginComponent implements OnInit {
 
     })
 
-    }
-    
+  }
+
 
 
 
