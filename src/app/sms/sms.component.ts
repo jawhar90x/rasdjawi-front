@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CartServiceService } from '../cart-service.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-sms',
@@ -9,29 +10,37 @@ import { CartServiceService } from '../cart-service.service';
 })
 export class SmsComponent implements OnInit {
 
-  public item  :any[]=[{name:'free sms' ,prix:2}];
-  public item2  :any[]=[{name:'pro' ,prix:10}];
   public totalItem : number = 0;
+  
   public productList : any ;
-  public filterCategory : any
-  searchKey:string ="";
-  constructor( private carteService : CartServiceService) { }
-
+ 
+ 
+  constructor( private user:UserService,private carteService:CartServiceService) { }
+  getProducts(){
+    return this.productList.asObservable();
+  }
   ngOnInit(): void {
-    
     this.carteService.getProducts()
     .subscribe(res=>{
       this.totalItem = res.length;
     })
+     
+    this.user.getProduct().subscribe(res=>{
+      this.productList = res;
+    
+      this.productList.forEach((a:any) => {      
+       Object.assign(a,{quantity:1,total:a.price}); //fonction qui calcule le total
+      });
+      console.log(this.productList)
+    });
 
-    this.carteService.search.subscribe((val:any)=>{
-      this.searchKey = val;
-    })
+    
   }
-  addToCart(item: any){
+  
+ addToCart(item: any){
     this.carteService.addtoCart(item);
     console.log(item)
   }
- 
+
 
 }

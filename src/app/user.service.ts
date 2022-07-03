@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Adress } from './adress';
 import { User } from './user';
-
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
+ private getProductsUrl = "https://fakestoreapi.com/products"
   private getAllUsersUrl = "http://localhost:3001/users/"
   private getOneUserUrl = "http://localhost:3001/users/"
   private deleteUserUrl = "http://localhost:3001/users/"
@@ -18,6 +18,10 @@ export class UserService {
   private weatherCurrenturl = "http://localhost:3001/weather/:address"
 
   constructor(private http: HttpClient) { }
+ 
+  getProduct(){
+    return this.http.get<any>(this.getProductsUrl);
+  }
 
   getAllUsers() {
     return this.http.get<any>(this.getAllUsersUrl);

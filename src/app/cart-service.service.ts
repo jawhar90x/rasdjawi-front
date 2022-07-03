@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartServiceService {
 
-  private addToCart="http://localhost:3001/sms-service"
+  private addToCart=""
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
@@ -52,7 +52,5 @@ export class CartServiceService {
     this.productList.next(this.cartItemList);
   }
 
-  buysms(product: any){
-    return this.http.post<any>(this.addToCart,product);
-  }
+ 
 }
