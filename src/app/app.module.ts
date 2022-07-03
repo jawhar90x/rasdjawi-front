@@ -21,7 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommandesComponent } from './dashboard/commandes/commandes.component';
 import { MembresComponent } from './dashboard/membres/membres.component';
 import { SidebarComponent } from './app/dashboard/sidebar/sidebar.component';
-import { HeaderComponent } from './header/header.component';
+ 
  
 
 @NgModule({
@@ -42,7 +42,7 @@ import { HeaderComponent } from './header/header.component';
     CommandesComponent,
     MembresComponent,
     SidebarComponent,
-    HeaderComponent
+  
   ],
   imports: [
     BrowserModule,

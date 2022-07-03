@@ -22,8 +22,7 @@ export class CartServiceService {
   }
   addtoCart(product : any){
 
-    
-    
+     
       
    this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
