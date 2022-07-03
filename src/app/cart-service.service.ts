@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartServiceService {
 
-  private addToCart=""
+   
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");

@@ -10,15 +10,14 @@ import { UserService } from '../user.service';
 })
 export class SmsComponent implements OnInit {
 
-  public totalItem : number = 0;
+ 
   
   public productList : any ;
+  totalItem: any;
  
  
   constructor( private user:UserService,private carteService:CartServiceService) { }
-  getProducts(){
-    return this.productList.asObservable();
-  }
+ 
   ngOnInit(): void {
     this.carteService.getProducts()
     .subscribe(res=>{
