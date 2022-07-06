@@ -4,7 +4,7 @@ import { User } from '../user';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
-import { HttpHeaders } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login',
@@ -50,16 +50,14 @@ export class LoginComponent implements OnInit {
     let user = new User("", "", "", data.email, data.password)
     this.userService.loginUser(user).subscribe({
       next: (result) => {
-        console.log(result.headers.get('authorization'))
-
-        /*
-console.log(result)
-let token = result.token;
-console.log(token)
-localStorage.setItem("myToken", token)
-this.toastr.success(result.message);
-
-this.router.navigate(['/weatherservice']);
+      
+        console.log(result.headers.get('Authorization'))
+        console.log(result.body.message)
+        /*let token = result.token;
+        localStorage.setItem("myToken", token)
+        this.toastr.success(result.message);
+ 
+        this.router.navigate(['/weatherservice']);
 */
       },
       error: (err) => {

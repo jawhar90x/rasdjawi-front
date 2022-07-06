@@ -16,25 +16,27 @@ export class MembresComponent implements OnInit {
   constructor(private userService: UserService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.userService.getAllUsers().subscribe(
-      result => {
+    this.userService.getAllUsers().subscribe({
+      next: (result) => {
         this.membres = result
-      },
-      error => {
-        console.log(error);
-      }
-    )
-  }
 
-  delete(person:any) {
+      },
+      error: (err) => {
+        console.log
+      }
+
+    })
+
+  }
+  delete(person: any) {
     let index = this.membres.indexOf(person);
     this.membres.splice(index, 1);
 
     this.userService.deleteUser(person._id).subscribe({
-      next:(result)=>{
+      next: (result) => {
         this.toastr.error(result.message);
       },
-      error:(err) =>{
+      error: (err) => {
         console.log(err);
       }
     }

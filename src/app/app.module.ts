@@ -21,6 +21,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommandesComponent } from './dashboard/commandes/commandes.component';
 import { MembresComponent } from './dashboard/membres/membres.component';
 import { SidebarComponent } from './app/dashboard/sidebar/sidebar.component';
+import { AppFooterDashboardComponent } from './app-footer-dashboard/app-footer-dashboard.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { FooterDashboardComponent } from './footer-dashboard/footer-dashboard.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { ContactComponent } from './contact/contact.component';
  
  
 
@@ -42,6 +47,11 @@ import { SidebarComponent } from './app/dashboard/sidebar/sidebar.component';
     CommandesComponent,
     MembresComponent,
     SidebarComponent,
+    AppFooterDashboardComponent,
+    SideBarComponent,
+    FooterDashboardComponent,
+    TopBarComponent,
+    ContactComponent,
   
   ],
   imports: [

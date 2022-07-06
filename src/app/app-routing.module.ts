@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogAdminComponent } from './log-admin/log-admin.component';
 import { MembresComponent } from './dashboard/membres/membres.component';
 import { CommandesComponent } from './dashboard/commandes/commandes.component';
+import { ContactComponent } from './contact/contact.component';
  
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path:'commandes',
     component:CommandesComponent
+  },
+  {
+    path:'contact',
+    component:ContactComponent
   },
   {
     path:'**',

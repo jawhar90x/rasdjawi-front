@@ -5,6 +5,7 @@ import { User } from '../user';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-log-admin',
@@ -44,25 +45,26 @@ export class LogAdminComponent implements OnInit {
 
 
   login() {
+     
     let data = this.myform.value;
     let user = new User("", "", "", data.email, data.password)
     this.userService.loginUser(user).subscribe({
       next: (result) => {
-        /*
+      /*
         console.log(result)
         let token = result.token;
         localStorage.setItem("myToken", token)
         this.toastr.success(result.message);
 
         this.router.navigate(['/dashboard']);
-        */
+       */
       },
       error: (err) => {
         console.log(err);
       }
 
     })
-
+ 
   }
 
 

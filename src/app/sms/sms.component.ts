@@ -10,11 +10,9 @@ import { UserService } from '../user.service';
 })
 export class SmsComponent implements OnInit {
 
- 
   
   public productList : any ;
   totalItem: any;
- 
  
   constructor( private user:UserService,private carteService:CartServiceService) { }
  
@@ -32,7 +30,6 @@ export class SmsComponent implements OnInit {
       });
       console.log(this.productList)
     });
-
     
   }
   

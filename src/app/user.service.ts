@@ -45,11 +45,15 @@ export class UserService {
   registerUser(user: User) {
     return this.http.post<any>(this.registerUserurl, user);
   }
-
+/*
+  loginUser(user: User) {
+    return this.http.post<any>(this.loginUserurl, user);
+  }
+  */
   loginUser(user: User) {
     return this.http.post<any>(this.loginUserurl, user, { observe: 'response' });
   }
-
+  
 
   isLoggedIn() {
     let token = localStorage.getItem("myToken");
