@@ -16,11 +16,7 @@ export class ContactComponent implements OnInit {
   myform: FormGroup;
   constructor(private fb: FormBuilder,private contactService: ContactService,private router:Router,private toastr:ToastrService) {
     let registerForm = {
-      firstname: new FormControl('', [
-        Validators.required,
-      ]
-
-      ),
+      
       gender: new FormControl('', [
         Validators.required]
       ),

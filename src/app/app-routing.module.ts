@@ -9,11 +9,13 @@ import { SmsComponent } from './sms/sms.component';
 import { WeatherserviceComponent } from './weatherservice/weatherservice.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { LogAdminComponent } from './log-admin/log-admin.component';
 import { MembresComponent } from './dashboard/membres/membres.component';
 import { CommandesComponent } from './dashboard/commandes/commandes.component';
 import { ContactComponent } from './contact/contact.component';
+import { MessageListComponent } from './message/message-list/message-list.component';
+import { MessageDisplayComponent } from './message/message-display/message-display.component';
  
 const routes: Routes = [
   {
@@ -65,6 +67,14 @@ const routes: Routes = [
   {
     path:'contact',
     component:ContactComponent
+  },
+  {
+    path:'message-list',
+   component:MessageListComponent
+  },
+  {
+    path:'message-display',
+    component:MessageDisplayComponent
   },
   {
     path:'**',

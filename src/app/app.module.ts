@@ -17,7 +17,7 @@ import { CartComponent } from './cart/cart.component';
 import { SmsComponent } from './sms/sms.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { LogAdminComponent } from './log-admin/log-admin.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { CommandesComponent } from './dashboard/commandes/commandes.component';
 import { MembresComponent } from './dashboard/membres/membres.component';
 import { SidebarComponent } from './app/dashboard/sidebar/sidebar.component';
@@ -26,6 +26,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { FooterDashboardComponent } from './footer-dashboard/footer-dashboard.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ContactComponent } from './contact/contact.component';
+import { MessageListComponent } from './message/message-list/message-list.component';
+import { MessageDisplayComponent } from './message/message-display/message-display.component';
  
  
 
@@ -52,6 +54,8 @@ import { ContactComponent } from './contact/contact.component';
     FooterDashboardComponent,
     TopBarComponent,
     ContactComponent,
+    MessageListComponent,
+    MessageDisplayComponent,
   
   ],
   imports: [
