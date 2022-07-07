@@ -73,7 +73,7 @@ const routes: Routes = [
    component:MessageListComponent
   },
   {
-    path:'message-display',
+    path:'message-display/:id',
     component:MessageDisplayComponent
   },
   {

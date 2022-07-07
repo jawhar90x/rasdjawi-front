@@ -24,7 +24,7 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Sender</th>
+                  <th>Gender</th>
                   <th>Subject</th>
 
                   <th>Edit</th>
@@ -35,14 +35,14 @@
 
                 <tr *ngFor="let message of messageList; let i = index">
                   <td>{{ i + 1 }}</td>
-                  <td>{{ message.sender }}</td>
+                  <td>{{ message.gender }}</td>
 
 
                   <td>{{ message.title }}</td>
 
                   <td>
 
-                    <button class="btn btn-primary mx-2" style="color: white" [routerLink]="['/message',message._id]">
+                    <button class="btn btn-primary mx-2" style="color: white" [routerLink]="['/message-display',message._id]">
                       <i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
                     <button class="btn btn-danger mx-2" style="color: white" (click)="delete(message._id, i)">

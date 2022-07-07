@@ -1,4 +1,5 @@
-<app-navbar></app-navbar>   
+<app-navbar></app-navbar>
+
 <body class="body">
 
   <div class="card">
@@ -32,39 +33,39 @@
           <small *ngIf="email?.errors?.['required']" class="text-danger">Email is required<br></small>
           <small *ngIf="email?.errors?.['email']" class="text-danger"> invalid Email<br></small>
         </div>
-      
 
-      
- <!-- form-group// -->
+
+
+        <!-- form-group// -->
 
 
         <div class="input-group-prepend">
           <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-          <input name="content" class="form-control" placeholder="Title" type="text" formControlName="content">
+          <input name="title" class="form-control" placeholder="Title" type="text" formControlName="title">
         </div>
-<br>
+        <br>
 
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa "></i> </span>
           </div>
-        
-          <textarea  rows="3" name="message" class="form-control" placeholder="Message" type="text" formControlName="message" ></textarea>
-       
+          <textarea rows="3" name="content" class="form-control" placeholder="content" type="text"
+            formControlName="content"></textarea>
+
         </div> <!-- form-group// -->
-        <div *ngIf="message?.invalid && message?.touched">
-          <small *ngIf="message?.errors?.['required']" class="text-danger">message is requied<br></small>
-           
+        <div *ngIf="content?.invalid && content?.touched">
+          <small *ngIf="content?.errors?.['required']" class="text-danger">message is requied<br></small>
+
         </div>
 
-   
 
-        
+
+
 
         <div class="form-group input-group">
-          <button type="submit" class="btn btn-primary btn-block" > Send Your Message </button>
+          <button type="submit" class="btn btn-primary btn-block"> Send Your Message </button>
         </div> <!-- form-group// -->
-        
+
       </form>
     </article>
   </div> <!-- card.// -->

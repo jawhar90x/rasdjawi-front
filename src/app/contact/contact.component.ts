@@ -24,10 +24,10 @@ export class ContactComponent implements OnInit {
         Validators.email,
         Validators.required
       ]),
-      content: new FormControl('',
+      title: new FormControl('',
         Validators.required,
       ),
-      message: new FormControl('',
+      content: new FormControl('',
       Validators.required,
     ),
     
@@ -36,8 +36,8 @@ export class ContactComponent implements OnInit {
   }
   get gender() { return this.myform.get('gender') }
   get email() { return this.myform.get('email') }
+  get title() { return this.myform.get('title') }
   get content() { return this.myform.get('content') }
-  get message() { return this.myform.get('message') }
   
  
 
@@ -47,9 +47,9 @@ export class ContactComponent implements OnInit {
 SendMessage()
 {
   let data = this.myform.value;
-  let message =new Message(data.gender,data.email,data.content,data.message)
+  let message =new Message(data.gender,data.email,data.title,data.content)
   
-
+console.log(data)
  this.contactService.addMessage(message).subscribe(
   {
     next: res => {

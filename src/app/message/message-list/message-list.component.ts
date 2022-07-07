@@ -14,7 +14,9 @@ export class MessageListComponent implements OnInit {
   ngOnInit(): void {
     this.contactservice.getAllMessage().subscribe({
       next: (result) => {
+        console.log(result)
         this.messageList = result
+        console.log(result)
       },
       error: (error) => {
         console.log(error);
