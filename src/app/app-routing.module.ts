@@ -6,7 +6,7 @@ import { Page404Component } from './page404/page404.component';
 import { RegisterComponent } from './register/register.component';
 import { TestComponent } from './test/test.component';
 import { SmsComponent } from './sms/sms.component';
-import { WeatherserviceComponent } from './weatherservice/weatherservice.component';
+import { WeatherserviceComponent } from './weatherservice/weatherservice/weatherservice.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
@@ -16,7 +16,10 @@ import { CommandesComponent } from './dashboard/commandes/commandes.component';
 import { ContactComponent } from './contact/contact.component';
 import { MessageListComponent } from './message/message-list/message-list.component';
 import { MessageDisplayComponent } from './message/message-display/message-display.component';
- 
+import { ProductsListComponent } from './dashboard/products/products-list/products-list.component';
+import { AddWeatherserviceComponent } from './weatherservice/add-weatherservice/add-weatherservice.component';
+import { WeatherserviceListComponent } from './weatherservice/weatherservice-list/weatherservice-list.component';
+import { AddProducsComponent } from './dashboard/products/add-producs/add-producs.component';
 const routes: Routes = [
   {
     path: '',
@@ -36,49 +39,68 @@ const routes: Routes = [
   },
 
   {
-    path:'sms',
-    component:SmsComponent
+    path: 'sms',
+    component: SmsComponent
   },
 
   {
-    path:'cart',
-    component:CartComponent
+    path: 'cart',
+    component: CartComponent
   },
   {
-    path:'checkout',
-    component:CheckoutComponent
+    path: 'checkout',
+    component: CheckoutComponent
   },
   {
-    path:'dashboard',
-    component:DashboardComponent
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
-    path:'log-admin',
-    component:LogAdminComponent
+    path: 'log-admin',
+    component: LogAdminComponent
   },
   {
-    path:'membres',
-    component:MembresComponent
+    path: 'membres',
+    component: MembresComponent
   },
   {
-    path:'commandes',
-    component:CommandesComponent
+    path: 'commandes',
+    component: CommandesComponent
   },
   {
-    path:'contact',
-    component:ContactComponent
+    path: 'contact',
+    component: ContactComponent
   },
   {
-    path:'message-list',
-   component:MessageListComponent
+    path: 'message-list',
+    component: MessageListComponent
   },
   {
-    path:'message-display/:id',
-    component:MessageDisplayComponent
+    path: 'message-display/:id',
+    component: MessageDisplayComponent
+  },
+
+  {
+    path: 'products-lists',
+    component: ProductsListComponent
   },
   {
-    path:'**',
-    component:Page404Component
+    path: 'add-weatherservice',
+    component: AddWeatherserviceComponent
+  },
+  {
+    path: 'weatherservice-list',
+    component:WeatherserviceListComponent
+  },
+  {
+    path: 'add-bulletin',
+    component:AddProducsComponent
+  },
+
+
+  {
+    path: '**',
+    component: Page404Component
   },
 
 ];

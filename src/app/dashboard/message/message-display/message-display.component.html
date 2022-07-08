@@ -1,0 +1,62 @@
+<div class="sb-nav-fixed">
+  <app-top-bar></app-top-bar>
+
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+
+    <!-- CONTENT-->
+
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h2 style="color: black">Display Message received  </h2>
+
+          <div>
+
+
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">...</div>
+              </div>
+            </div>
+            <table class="fl-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Gender</th>
+                  <th>E-mail</th>
+                  <th>Subject</th>
+
+                  <th>Message</th>
+
+                </tr>
+              </thead>
+              <tbody>
+
+                 
+                 <td></td>
+                  <td>{{ message.gender }}</td>
+                  <td>{{message.email}}</td>
+
+                  <td>{{ message.title }}</td>
+                  <textarea name="" id="message" cols="100" rows="10">
+                  {{ message.content }}
+                </textarea>
+                  <td>
+
+                    
+                   
+                
+
+              </tbody>
+
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <app-footer-dashboard></app-footer-dashboard>
+</div>

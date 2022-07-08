@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { WeatherserviceComponent } from './weatherservice/weatherservice.component';
+import { WeatherserviceComponent } from './weatherservice/weatherservice/weatherservice.component';
 import { Page404Component } from './page404/page404.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -28,7 +28,10 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ContactComponent } from './contact/contact.component';
 import { MessageListComponent } from './message/message-list/message-list.component';
 import { MessageDisplayComponent } from './message/message-display/message-display.component';
- 
+import { ProductsListComponent } from './dashboard/products/products-list/products-list.component';
+import { AddProducsComponent } from './dashboard/products/add-producs/add-producs.component';
+import { AddWeatherserviceComponent } from './weatherservice/add-weatherservice/add-weatherservice.component';
+import { WeatherserviceListComponent } from './weatherservice/weatherservice-list/weatherservice-list.component';
  
 
 @NgModule({
@@ -56,7 +59,11 @@ import { MessageDisplayComponent } from './message/message-display/message-displ
     ContactComponent,
     MessageListComponent,
     MessageDisplayComponent,
-  
+    ProductsListComponent,
+    AddProducsComponent,
+    AddWeatherserviceComponent,
+    WeatherserviceListComponent,
+   
   ],
   imports: [
     BrowserModule,
