@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { WeatherServiceService } from 'src/app/service/weather-service.service';
+import { WeatherserviceComponent } from '../weatherservice/weatherservice.component';
 @Component({
   selector: 'app-add-weatherservice',
   templateUrl: './add-weatherservice.component.html',
@@ -13,7 +15,7 @@ export class AddWeatherserviceComponent implements OnInit {
   selectedFile: any;
   imageUrl = 'assets/img/default.jpg';
 
-  constructor(private fb: FormBuilder,private router: Router,private toastr: ToastrService)
+  constructor(private fb: FormBuilder,private router: Router,private toastr: ToastrService,private weatherService :WeatherServiceService)
    {
     let weatherservice = {
       name: new FormControl('', [
@@ -51,5 +53,16 @@ export class AddWeatherserviceComponent implements OnInit {
     formData.append('name', data.name),
       formData.append('picture', this.selectedFile);
 
+      this.weatherService.addWeatherservice(formData).subscribe({
+        next: (result) => {
+         
+          this.toastr.success("Service  ajoutée avec succès");
+          this.router.navigate(['/weatherservice']);
+        },
+        error: (error) => {
+          this.toastr.error(error.error.message);
+          console.log(error);
+        },
+      })
   }
 }
