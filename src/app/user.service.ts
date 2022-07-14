@@ -9,6 +9,7 @@ import {map} from 'rxjs/operators';
 })
 export class UserService {
  private getProductsUrl = "https://fakestoreapi.com/products"
+ 
   private getAllUsersUrl = "http://localhost:3001/users/"
   private getOneUserUrl = "http://localhost:3001/users/"
   private deleteUserUrl = "http://localhost:3001/users/"

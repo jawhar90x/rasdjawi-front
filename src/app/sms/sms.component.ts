@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { WeatherServiceService } from '../service/weather-service.service';
 import { CartServiceService } from '../cart-service.service';
 import { UserService } from '../user.service';
 
@@ -14,7 +14,7 @@ export class SmsComponent implements OnInit {
   public productList : any ;
   totalItem: any;
  
-  constructor( private user:UserService,private carteService:CartServiceService) { }
+  constructor( private user:UserService,private carteService:CartServiceService,weatherService:WeatherServiceService) { }
  
   ngOnInit(): void {
     this.carteService.getProducts()

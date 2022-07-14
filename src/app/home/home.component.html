@@ -15,11 +15,11 @@
         </div>
         <form >
             <div class="weather">
-                <h2 class="city">weather in Tunisia</h2>
+                <h2 class="city">{{ current.name }}</h2>
                 <h1 class="temp">temp</h1>
                 <img src="" alt="" class="icon">
-                <div class="discription">Cloudy</div>
-                <div class="humidity">Humidty: 60%</div>
+                <div class="discription"></div>
+                <div class="humidity">{{ current.cloud }}</div>
                 <div class="win">wind speed 6.2 Km/h </div>
             </div>
         </form>

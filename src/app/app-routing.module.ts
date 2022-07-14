@@ -20,6 +20,7 @@ import { ProductsListComponent } from './dashboard/products/products-list/produc
 import { AddWeatherserviceComponent } from './weatherservice/add-weatherservice/add-weatherservice.component';
 import { WeatherserviceListComponent } from './weatherservice/weatherservice-list/weatherservice-list.component';
 import { AddProducsComponent } from './dashboard/products/add-producs/add-producs.component';
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -32,6 +33,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  
   },
   {
     path: 'weatherservice',
@@ -53,7 +55,8 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'log-admin',
@@ -61,11 +64,13 @@ const routes: Routes = [
   },
   {
     path: 'membres',
-    component: MembresComponent
+    component: MembresComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'commandes',
-    component: CommandesComponent
+    component: CommandesComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'contact',
@@ -73,7 +78,8 @@ const routes: Routes = [
   },
   {
     path: 'message-list',
-    component: MessageListComponent
+    component: MessageListComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'message-display/:id',
@@ -82,7 +88,8 @@ const routes: Routes = [
 
   {
     path: 'products-lists',
-    component: ProductsListComponent
+    component: ProductsListComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'add-weatherservice',

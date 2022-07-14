@@ -52,12 +52,12 @@ export class AddWeatherserviceComponent implements OnInit {
     let formData = new FormData();
     formData.append('name', data.name),
       formData.append('picture', this.selectedFile);
-
+      console.log(formData)
       this.weatherService.addWeatherservice(formData).subscribe({
         next: (result) => {
-         
-          this.toastr.success("Service  ajoutée avec succès");
-          this.router.navigate(['/weatherservice']);
+         console.log(result)
+      //   this.toastr.success("Service  ajoutée avec succès");
+          this.router.navigate(['/weatherservice-list']);
         },
         error: (error) => {
           this.toastr.error(error.error.message);

@@ -3,6 +3,8 @@ import { UserService } from '../user.service';
 import { User } from '../user';
 import { Adress } from '../adress';
 import { FormGroup, FormBuilder, FormControl, Validator } from '@angular/forms';
+import { WeatherCurrentService } from '../service/weather-current.service';
+import { cpuUsage } from 'process';
 @Component({
 
   selector: 'app-home',
@@ -10,12 +12,24 @@ import { FormGroup, FormBuilder, FormControl, Validator } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  current: any
   myform: FormGroup | undefined
-  constructor(private userService: UserService, private fb: FormBuilder) {
+  constructor(private weatherCurrent: WeatherCurrentService, private fb: FormBuilder) {
 
   }
 
   ngOnInit(): void {
+    this.weatherCurrent.getWeatherCurrent().subscribe({
+      next: (result) => {
+        this.current = result
+        console.log(result)
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+
   }
 
 

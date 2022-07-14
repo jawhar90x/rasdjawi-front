@@ -6,11 +6,15 @@ import { BaseService } from './base.service';
   providedIn: 'root'
 })
 export class WeatherServiceService {
-
+  //private AddweatherServiceUrl = "http://localhost:3001/weatherservice/"
   private weatherServiceUrl = `${BaseService.baseUrl}/weatherservice/`;
 
   constructor(private http: HttpClient) { }
 
+  addWeatherservice(weatherservice: any) {
+    return this.http.post<any>(this.weatherServiceUrl, weatherservice);
+  }
+  
   getWeatherservice() {
     return this.http.get<any>(this.weatherServiceUrl);
   }
@@ -23,12 +27,11 @@ export class WeatherServiceService {
     return this.http.delete<any>(this.weatherServiceUrl + id)
   }
 
-  addWeatherservice(weatherservice: any) {
-    return this.http.post<any>(this.weatherServiceUrl, weatherservice);
-  }
+ 
 
   updatWeatherservice(weatherservice: any, id:string) {
     return this.http.patch<any>(this.weatherServiceUrl+id, weatherservice);
   }
+  
 }
 
